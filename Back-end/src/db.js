@@ -24,7 +24,9 @@ Technologies.belongsToMany(Projects, { through: 'ProjectTechnologies', timestamp
 
 Technologies.belongsToMany(Certificates, { through: 'TechnologyCertificates', timestamps:false });
 Certificates.belongsToMany(Technologies, { through: 'TechnologyCertificates', timestamps:false })
+console.log(sequelize.models);
 
+console.log(texto.length);
 module.exports = {
     sequelize,
     ...sequelize.models
