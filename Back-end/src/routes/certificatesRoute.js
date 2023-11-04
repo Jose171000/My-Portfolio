@@ -1,11 +1,11 @@
-const {Router} = require("express");
-const certificatesRoute = Router();
+const certificatesRoute = ((require("express"))).Router();
+const {getCertificates, deleCertificate, posteoCertificate} = require("../handlers/certificatesHandler")
 
-certificatesRoute.get("/", );
+certificatesRoute.get("/",getCertificates );
 
-certificatesRoute.post("/new",);
+certificatesRoute.post("/new",posteoCertificate);
 
-certificatesRoute.delete("/delete",);
+certificatesRoute.delete("/delete",deleCertificate);
 
 
 module.exports = {certificatesRoute}
