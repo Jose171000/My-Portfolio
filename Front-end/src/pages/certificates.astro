@@ -1,10 +1,12 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BasicTemplate from "../layouts/BasicTemplate.astro";
+import CardsContainer from "../components/Certificates/CardContainer";
 ---
-<head>    
-    <BaseHead title="Certificates" description="All my certificates to support my knowledge"></BaseHead>
-</head>
-<body>
-    <Header title="Certificates"></Header>
-</body>
+
+<BasicTemplate
+    title="Certificates"
+    description="All my certificates to support my knowledge"
+>
+    <h2>Certificates</h2>
+    <CardsContainer client:load />
+</BasicTemplate>

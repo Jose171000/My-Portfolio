@@ -15,9 +15,11 @@ import App from "../components/Cube3D.jsx"
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<FirstData/>
-			<div>
-				<App client:load/>
+			<div class="contenedor">
+				<FirstData/>
+				<div class="cubo">
+					<App client:load/>
+				</div>
 			</div>
 		</main>
 		<Footer />
@@ -25,10 +27,11 @@ import App from "../components/Cube3D.jsx"
 </html>
 
 <style>
-main{
+.contenedor{
 	display: flex;
 	flex-direction: row;
 }
+.cubo{
 	
+}
 </style>
-../components/Cube3D.jsx
