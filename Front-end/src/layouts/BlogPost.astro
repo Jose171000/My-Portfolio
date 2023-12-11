@@ -8,8 +8,6 @@ import FormattedDate from "../components/FormattedDate.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-console.log(Astro);
-
 ---
 
 <html lang="en">
@@ -19,32 +17,33 @@ console.log(Astro);
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
-				margin: 0;
+				margin: -2% 0 0 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 			.hero-image {
 				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 			.hero-image img {
+				margin:20px 0 20px 0;
 				display: block;
-				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				width: 60%;
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
+				width: 740px;
+				flex-grow: 1;
+				margin: 0 0 0 -10%;
+				max-width:100%;
 				color: rgb(var(--gray-dark));
 			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
+			h1 {
+				margin: 0 0  0;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -53,12 +52,18 @@ console.log(Astro);
 			.last-updated-on {
 				font-style: italic;
 			}
+			article {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
 		</style>
 	</head>
 
 	<body>
 		<Header />
 		<main>
+			<h1>{title}</h1>
 			<article>
 				<div class="hero-image">
 					{
@@ -71,23 +76,17 @@ console.log(Astro);
 							/>
 						)
 					}
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<div class="last-updated-on">
+								Last updated on{" "}
+								<FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
 				</div>
 				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on{" "}
-										<FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
 					<slot />
 				</div>
 			</article>
