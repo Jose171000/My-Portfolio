@@ -1,10 +1,13 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+
+
 ---
 
 <header>
 	<nav>
 		<h2><a href="/">Jose Reategui</a></h2>
+		<button class="toggle">+</button>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/certificates">Certificates</HeaderLink>
@@ -63,6 +66,9 @@ import HeaderLink from "./HeaderLink.astro";
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
+	.toggle{
+		display: none;
+	}
 	h2 {
 		margin: 0;
 		font-size: 1em;
@@ -94,6 +100,15 @@ import HeaderLink from "./HeaderLink.astro";
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		.internal-links :nth-child(n){
+			
+		}
+		.toggle{
+			display: block;
+		}
+		.toggle:active{
+			background-color: black;
 		}
 	}
 </style>

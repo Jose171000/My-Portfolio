@@ -1,9 +1,36 @@
 ---
 import BasicTemplate from "../layouts/BasicTemplate.astro";
+import Card from "../components/Certificates/Card";
 ---
-<BasicTemplate 
-title="References" 
-description="All my projects where I demostrated my skills">
 
+<BasicTemplate
+    title="References"
+    description="All my projects where I demostrated my skills"
+>
+    <h2>All my projects</h2>
+    <div class="container">
+        <Card
+            picture={"https://res.cloudinary.com/dce6wpls5/image/upload/v1703013202/2023-12-19_zkduw2.png"}
+            titulo="AllTech.com"
+            client:load
+        />
+        <Card
+            picture={"https://res.cloudinary.com/dce6wpls5/image/upload/v1703023773/2023-12-19_2_x1hn05.png"}
+            titulo="WarmiVentures"
+            client:load
+        />
+        <Card
+            picture={"https://res.cloudinary.com/dce6wpls5/image/upload/v1703024595/2023-12-19_3_n9xor6.png"}
+            titulo="Rick & Morty SPA"
+            client:load
+        />
+    </div>
 </BasicTemplate>
 <!-- <BaseHead title="References" description="All my projects where I demostrated my skills"></BaseHead> -->
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
