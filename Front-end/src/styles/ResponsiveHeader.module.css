@@ -1,0 +1,20 @@
+
+.popUpMenu{
+    position: fixed;
+    background-color: white;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.toggleOff{
+    display: none;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}

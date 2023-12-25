@@ -1,7 +1,21 @@
 .container {
     position: relative;
     width: 220px;
-      
+
+}
+
+@media only screen and (max-width:720px) {
+    @keyframes pulsate {
+        0%, 100%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.1);
+        }
+    }
+    .container {
+        animation: pulsate 2s infinite;
+    }
 }
 
 .curtain {
@@ -45,13 +59,14 @@
     border-radius: 8px;
 
 }
-.fullScreen .picture{
+
+.fullScreen .picture {
     width: 60%;
     border-radius: 8px 0 0 8px;
 
 }
 
-.description{
+.description {
     background-color: rgb(154, 154, 154);
     padding-top: 25px;
     width: 40%;

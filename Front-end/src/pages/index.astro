@@ -13,7 +13,8 @@ import App from "../components/Cube3D.jsx"
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
+		<Header />
+		<!-- <ResponsiveHeader client:load/> -->
 		<main>
 			<div class="contenedor">
 				<FirstData/>
@@ -31,10 +32,12 @@ import App from "../components/Cube3D.jsx"
 	display: flex;
 	flex-direction: row;
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 720px){
 	.contenedor{
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
 </style>

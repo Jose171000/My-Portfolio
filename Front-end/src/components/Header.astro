@@ -1,13 +1,11 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-
-
+import ResponsiveHeader from "./ResponsiveHeader";
 ---
 
 <header>
 	<nav>
 		<h2><a href="/">Jose Reategui</a></h2>
-		<button class="toggle">+</button>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/certificates">Certificates</HeaderLink>
@@ -15,6 +13,9 @@ import HeaderLink from "./HeaderLink.astro";
 			<HeaderLink href="/references">References</HeaderLink>
 			<HeaderLink href="/tools">Tools</HeaderLink>
 			<HeaderLink href="/contactMe">Contact Me</HeaderLink>
+		</div>
+		<div class="responsive-header">
+			<ResponsiveHeader client:load/>
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -62,11 +63,11 @@ import HeaderLink from "./HeaderLink.astro";
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 20px 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	.toggle{
+	.toggle {
 		display: none;
 	}
 	h2 {
@@ -97,18 +98,30 @@ import HeaderLink from "./HeaderLink.astro";
 	.social-links a {
 		display: flex;
 	}
+	.responsive-header{
+		display: none;
+	}	
 	@media (max-width: 720px) {
+		.responsive-header{
+			display: flex;
+			z-index: 3;
+		}
 		.social-links {
-			display: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 25%;
 		}
-		.internal-links :nth-child(n){
-			
+		.internal-links :nth-child(n) {
 		}
-		.toggle{
+		.toggle {
 			display: block;
 		}
-		.toggle:active{
+		.toggle:active {
 			background-color: black;
+		}
+		.internal-links{
+			display: none;
 		}
 	}
 </style>
